@@ -1,12 +1,16 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
-const userRoutes = require('./routes/user')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const expressValidator = require('express-validator')
 const cors = require('cors')
-require('dotenv').config()
+// import router
+const userRoutes = require('./routes/user')
+const authRoutes = require('./routes/auth')
+const categoryRoutes = require('./routes/category')
+const productRoutes = require('./routes/product')
 
 // app
 const app = express()
@@ -28,7 +32,10 @@ app.use(expressValidator());
 app.use(cors());
 
 //routes middleware
+app.use("/api", authRoutes)
 app.use("/api", userRoutes)
+app.use("/api", categoryRoutes)
+app.use("/api", productRoutes)
 
 const port = process.env.PORT || 8080
 

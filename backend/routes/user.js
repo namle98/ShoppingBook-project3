@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const {userById} = require('../controllers/user.js')
+const {userById, read, update} = require('../controllers/user.js')
 const {
     requireSignin,
     isAuth,
@@ -14,6 +14,9 @@ router.get('/secret/:userId', requireSignin, isAuth, isAdmin, (req, res) => {
         user: req.profile
     })
 } )
+
+router.get('/user/:userId', requireSignin, isAuth, read)
+router.put('/user/:userId', requireSignin, isAuth, update)
 
 router.param('userId', userById)
 

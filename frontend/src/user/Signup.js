@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Layout from '../core/Layout'
-import {API} from '../config'
 import {Link} from 'react-router-dom'
+import {signup} from '../auth/index'
 
 
 const Signup = () => {
@@ -14,22 +14,7 @@ const Signup = () => {
         success: false
     })
 
-    const signup = (user) => {
-        return fetch(`${API}/signup`, {
-            method: "POST",
-            headers: {
-                Accept: 'application/json',
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify(user)
-        })
-        .then(res => {
-            return res.json()
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
+    
 
     const {name, email, password, success, error} = values
 
@@ -97,7 +82,7 @@ const Signup = () => {
 
     const showSuccess = () => (
         <div className="alert alert-info" style={{ display: success ? '' : 'none' }}>
-            New account is created. Please <Link to="/signin">Signin</Link>
+            New account is created. Please <Link to="/signin">Register</Link>
         </div>
     );
 

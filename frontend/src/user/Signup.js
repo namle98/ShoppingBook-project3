@@ -82,14 +82,14 @@ const Signup = () => {
 
     const showSuccess = () => (
         <div className="alert alert-info" style={{ display: success ? '' : 'none' }}>
-            New account is created. Please <Link to="/signin">Register</Link>
+            New account is created. Please <Link to="/signin">Login</Link>
         </div>
     );
 
     return (
         <Layout
             title="Signup"
-            description="Signup to Node React E-commerce App"
+            description="Register to MERN stack"
             className="container col-md-8 offset-md-2"
         >
             {showSuccess()}

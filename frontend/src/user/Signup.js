@@ -89,7 +89,7 @@ const Signup = () => {
     return (
         <Layout
             title="Signup"
-            description="Register to MERN stack"
+            description="Signup to MERN stack"
             className="container col-md-8 offset-md-2"
         >
             {showSuccess()}

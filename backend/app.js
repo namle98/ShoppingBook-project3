@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const expressValidator = require('express-validator')
+const session = require('express-session')
 const cors = require('cors')
 // import router
 const userRoutes = require('./routes/user')
@@ -27,6 +28,12 @@ mongoose.connect(process.env.DATABASE, {
 
 app.use(morgan('dev'))
 app.use(bodyParser.json())
+app.use(session({
+    secret: 'my secret string',
+    resave: false,
+    saveUninitialized: false,
+    cookie: { maxAge: 6 * 60 * 60 } // 12hs
+}))
 app.use(cookieParser())
 app.use(expressValidator());
 app.use(cors());

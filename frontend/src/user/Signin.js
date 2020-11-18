@@ -62,7 +62,7 @@ const Signin = () => {
                 />
             </div>
             <button onClick={clickSubmit} className="btn btn-primary">
-                Submit
+                Login
             </button>
         </form>
     );

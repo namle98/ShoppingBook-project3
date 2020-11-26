@@ -1,6 +1,7 @@
 import React, {Fragment} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {signout, isAuthenticated} from '../auth'
+import {itemTotal} from './cartHelpers'
 
 const isActive = (history, path) => {
     if(history.location.pathname === path){
@@ -20,7 +21,7 @@ const Menu = ({history}) => {
                         style={isActive(history, '/')} 
                         to='/'
                         >
-                            Home
+                            Trang chủ
                     </Link>
                 </li>
                 <li className="nav-item">
@@ -29,7 +30,16 @@ const Menu = ({history}) => {
                         style={isActive(history, '/shop')} 
                         to='/shop'
                         >
-                            Shop
+                            Mua Hàng
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link 
+                        className="nav-link" 
+                        style={isActive(history, '/cart')} 
+                        to='/cart'
+                        >
+                            Giỏ hàng <sup><small className='cart-badge'>{itemTotal()}</small></sup>
                     </Link>
                 </li>
 
@@ -40,7 +50,7 @@ const Menu = ({history}) => {
                             style={isActive(history, "/user/dashboard")}
                             to="/user/dashboard"
                         >
-                            Dashboard
+                            Tổng quan
                         </Link>
                     </li>
                 )}
@@ -52,7 +62,7 @@ const Menu = ({history}) => {
                             style={isActive(history, "/admin/dashboard")}
                             to="/admin/dashboard"
                         >
-                            Dashboard
+                            Tổng quan
                         </Link>
                     </li>
                 )}
@@ -65,7 +75,7 @@ const Menu = ({history}) => {
                                 style={isActive(history, '/signin')} 
                                 to='/signin'
                                 >
-                                Login
+                                Đăng nhập
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -74,7 +84,7 @@ const Menu = ({history}) => {
                             style={isActive(history, '/signup')} 
                             to='/signup'
                             >
-                                Signup
+                                Đăng kí
                             </Link>
                         </li>
                     </Fragment>
@@ -89,10 +99,20 @@ const Menu = ({history}) => {
                             history.push('/')
                         })}
                         >
-                            Logout
+                            Đăng xuất
                         </span>
                     </li>
+                    
                 )}
+                <li className="nav-item">
+                    <Link 
+                        className="nav-link" 
+                        style={isActive(history, '/contact')} 
+                        to='/contact'
+                        >
+                            Liên Hệ
+                    </Link>
+                </li>
             </ul>
         </div>
     )

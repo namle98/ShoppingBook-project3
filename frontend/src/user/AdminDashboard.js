@@ -11,26 +11,26 @@ const AdminDashboard = () => {
     const adminLinks = () => {
         return (
             <div className="card">
-                <h4 className="card-header">Menu Admin</h4>
+                <h4 className="card-header">Quản lý sản phẩm và mua bán</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
                         <Link className="nav-link" to="/create/category">
-                            Create Category
+                            Thêm loại hàng
                         </Link>
                     </li>
                     <li className="list-group-item">
                         <Link className="nav-link" to="/create/product">
-                            Create Product
+                            Thêm sản phẩm
                         </Link>
                     </li>
                     <li className="list-group-item">
                         <Link className="nav-link" to="/admin/orders">
-                            View Orders
+                            Xem đặt hàng
                         </Link>
                     </li>
                     <li className="list-group-item">
                         <Link className="nav-link" to="/admin/products">
-                            Manage Products
+                            Quản lý sản phẩm
                         </Link>
                     </li>
                 </ul>
@@ -41,12 +41,12 @@ const AdminDashboard = () => {
     const adminInfo = () => {
         return (
             <div className="card mb-5">
-                <h3 className="card-header">User Information</h3>
+                <h3 className="card-header">Thông tin người dùng</h3>
                 <ul className="list-group">
                     <li className="list-group-item">{name}</li>
                     <li className="list-group-item">{email}</li>
                     <li className="list-group-item">
-                        {role === 1 ? "Admin" : "Registered User"}
+                    Chức vụ: {role === 1 ? "Quản lý" : "Khách hàng"}
                     </li>
                 </ul>
             </div>
@@ -55,8 +55,8 @@ const AdminDashboard = () => {
 
     return (
         <Layout
-            title="Dashboard"
-            description={`Welcome ${name}!`}
+            title="Tổng quan"
+            description={`Xin Chào ${name}!`}
             className="container-fluid"
         >
             <div className="row">

@@ -1,3 +1,7 @@
 [1111/104845.173:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1116/092211.347:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [1119/101425.146:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1119/151833.689:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\LeNam\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\aa37f28d-73b7-485e-8709-10440d56dd25: The system cannot find the path specified. (0x3)
+[1119/152717.373:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1125/164530.359:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1126/135139.367:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

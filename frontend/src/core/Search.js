@@ -86,7 +86,7 @@ const Search = () => {
                     <div className='input-group input-group-lg'>
                         <div className='input-group-prepend'>
                             <select className='btn mr-2'  onChange={handleChange('category')}>
-                                <option value='All'>All</option>
+                                <option value='All'>Tất cả</option>
                                 {categories.map((c,i) => (
                                     <option key={i} value={c._id}>{c.name}</option>
                                 ))}
@@ -96,11 +96,11 @@ const Search = () => {
                             type='search' 
                             className='form-control'
                             onChange={handleChange('search')}
-                            placeholder='Search by name'
+                            placeholder='Nhập tên tìm kiếm'
                         />
                     </div>
                     <div className='btn input-group-append' style={{border: 'none'}}>
-                        <button className='input-group-text'>Search</button>
+                        <button className='input-group-text'>Tìm kiếm</button>
                     </div>
                 </span>
             </form>

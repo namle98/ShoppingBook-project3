@@ -53,7 +53,7 @@ const Signin = () => {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Password</label>
+                <label className="text-muted">Mật Khẩu</label>
                 <input
                     onChange={handleChange("password")}
                     type="password"
@@ -62,7 +62,7 @@ const Signin = () => {
                 />
             </div>
             <button onClick={clickSubmit} className="btn btn-primary">
-                Login
+                Đăng nhập
             </button>
         </form>
     );
@@ -98,8 +98,8 @@ const Signin = () => {
 
     return (
         <Layout
-            title="Login"
-            description="Login to MERN stack"
+            title="Đăng nhập"
+            description="Đăng nhập để mua hàng"
             className="container col-md-8 offset-md-2"
         >
             {showError()}

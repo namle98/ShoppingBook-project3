@@ -64,7 +64,7 @@ const Shop = () => {
             size > 0 &&
             size >= limit && (
                 <button onClick={loadMore} className="btn btn-warning mb-5">
-                    Load more
+                    Xem thêm
                 </button>
             )
         );
@@ -104,13 +104,13 @@ const Shop = () => {
 
     return (
         <Layout
-        title="Shop Page"
-        description="Search and find books of your choice"
+        title="Mua hàng"
+        description="Tìm kiếm và mua hàng"
         className="container-fluid"
         >
             <div className="row">
                 <div className="col-4">
-                    <h4>Filter by categories</h4>
+                    <h4>Chọn ngôn ngữ</h4>
                     <ul>
                         <Checkbox
                             categories={categories}
@@ -120,7 +120,7 @@ const Shop = () => {
                         />
                     </ul>
 
-                    <h4>Filter by price range</h4>
+                    <h4>Chọn mức giá</h4>
                     <div>
                         <RadioBox
                             prices={prices}
@@ -131,10 +131,12 @@ const Shop = () => {
                     </div>
                 </div>
                 <div className="col-8">
-                    <h2 className="mb-4">Products</h2>
+                    <h2 className="mb-4">Sản phẩm</h2>
                     <div className="row">
                         {filteredResults.map((product, i) => (
-                            <Card key={i} product={product} />
+                            <div key={i} className='col-4 mb-3'>
+                                <Card  product={product}/>
+                            </div>
                         ))}
                     </div>
                     <hr/>

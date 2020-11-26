@@ -38,22 +38,26 @@ const Home = () => {
 
     return (
         <Layout
-            title="Home Page"
-            description="MERN STACK"
+            title="Cửa hàng sách lập trình"
+            description="Sách lập trình cập nhật công nghệ mới"
             className="container-fluid"
         >
             <Search />
-            <h2 className='mb-4'>Best Sellers</h2>
+            <h2 className='mb-4'>Bán chạy</h2>
             <div className='row'>
             {productsBySell.map((product, i) => (
-                <Card key={i} product={product}/>
+                <div key={i} className='col-4 mb-3'>
+                    <Card  product={product}/>
+                </div>
             ))}
             </div>
 
-            <h2 className='mb-4'>New Arrivals</h2>
+            <h2 className='mb-4'>Sản phẩm mới</h2>
             <div className='row'>
             {productsByArrival.map((product, i) => (
-                <Card key={i} product={product}/>
+                <div key={i} className='col-4 mb-3'>
+                    <Card  product={product}/>
+                </div>
             ))}
             </div>
         </Layout>

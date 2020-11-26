@@ -44,7 +44,7 @@ const Signup = () => {
     const signUpForm = () => (
             <form>
                 <div className="form-group">
-                    <label className="text-muted">Name</label>
+                    <label className="text-muted">Tên</label>
                     <input 
                         onChange={handleChange('name')} 
                         type="text" 
@@ -62,7 +62,7 @@ const Signup = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label className="text-muted">Password</label>
+                    <label className="text-muted">Mật khẩu</label>
                     <input 
                         onChange={handleChange('password')} 
                         type="password" 
@@ -70,7 +70,7 @@ const Signup = () => {
                         value={password}
                     />
                 </div>
-                <button onClick={clickSubmit} className='btn btn-primary'> Register</button>
+                <button onClick={clickSubmit} className='btn btn-primary'>Đăng kí</button>
             </form>
     )
 
@@ -82,14 +82,14 @@ const Signup = () => {
 
     const showSuccess = () => (
         <div className="alert alert-info" style={{ display: success ? '' : 'none' }}>
-            New account is created. Please <Link to="/signin">Login</Link>
+            Tài khoản đã được tạo. Vui lòng <Link to="/signin">Đăng nhập</Link>
         </div>
     );
 
     return (
         <Layout
-            title="Signup"
-            description="Signup to MERN stack"
+            title="Đăng kí"
+            description="Đăng kí khách hàng mới"
             className="container col-md-8 offset-md-2"
         >
             {showSuccess()}

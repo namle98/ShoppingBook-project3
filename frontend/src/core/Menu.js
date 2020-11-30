@@ -66,6 +66,15 @@ const Menu = ({history}) => {
                         </Link>
                     </li>
                 )}
+                <li className="nav-item">
+                    <Link 
+                        className="nav-link" 
+                        style={isActive(history, '/contact')} 
+                        to='/contact'
+                        >
+                            Liên Hệ
+                    </Link>
+                </li>
             
                 {!isAuthenticated() && (
                     <Fragment>
@@ -104,15 +113,7 @@ const Menu = ({history}) => {
                     </li>
                     
                 )}
-                <li className="nav-item">
-                    <Link 
-                        className="nav-link" 
-                        style={isActive(history, '/contact')} 
-                        to='/contact'
-                        >
-                            Liên Hệ
-                    </Link>
-                </li>
+                
             </ul>
         </div>
     )

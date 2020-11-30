@@ -40,11 +40,11 @@ const Orders = () => {
         if (orders.length > 0) {
             return (
                 <h1 className="text-danger display-2">
-                    Total orders: {orders.length}
+                    Số lượng đặt hàng: {orders.length}
                 </h1>
             );
         } else {
-            return <h1 className="text-danger">No orders</h1>;
+            return <h1 className="text-danger">Không có đơn đặt hàng</h1>;
         }
     };
 
@@ -76,12 +76,12 @@ const Orders = () => {
 
     const showStatus = o => (
         <div className="form-group">
-            <h3 className="mark mb-4">Status: {o.status}</h3>
+            <h3 className="mark mb-4">Trạng thái đơn hàng: {o.status}</h3>
             <select
                 className="form-control"
                 onChange={e => handleStatusChange(e, o._id)}
             >
-                <option>Update Status</option>
+                <option>Cập nhật trạng thái</option>
                 {statusValues.map((status, index) => (
                     <option key={index} value={status}>
                         {status}
@@ -93,10 +93,10 @@ const Orders = () => {
 
     return (
         <Layout
-            title="Orders"
-            description={`Welcome ${
+            title="Đặt hàng"
+            description={`Xin chào ${
                 user.name
-            }, you can manage all the orders here`}
+            }`}
             className="container-fluid"
         >
             <div className="row">
@@ -112,7 +112,7 @@ const Orders = () => {
                             >
                                 <h2 className="mb-5">
                                     <span className="bg-primary">
-                                        Order ID: {o._id}
+                                        Mã đặt hàng: {o._id}
                                     </span>
                                 </h2>
 
@@ -121,25 +121,25 @@ const Orders = () => {
                                         {showStatus(o)}
                                     </li>
                                     <li className="list-group-item">
-                                        Transaction ID: {o.transaction_id}
+                                        Mã giao hàng: {o.transaction_id}
                                     </li>
                                     <li className="list-group-item">
-                                        Amount: ${o.amount}
+                                        Số lượng: ${o.amount}
                                     </li>
                                     <li className="list-group-item">
-                                        Ordered by: {o.user.name}
+                                        Người đặt hàng: {o.user.name}
                                     </li>
-                                    <li className="list-group-item">
+                                    {/* <li className="list-group-item">
                                         Ordered on:{" "}
                                         {moment(o.createdAt).fromNow()}
-                                    </li>
+                                    </li> */}
                                     <li className="list-group-item">
-                                        Delivery address: {o.address}
+                                        Địa chỉ giao hàng: {o.address}
                                     </li>
                                 </ul>
 
                                 <h3 className="mt-4 mb-4 font-italic">
-                                    Total products in the order:{" "}
+                                    Số lượng sản phẩm được đặt hàng:{" "}
                                     {o.products.length}
                                 </h3>
 
@@ -152,10 +152,10 @@ const Orders = () => {
                                             border: "1px solid indigo"
                                         }}
                                     >
-                                        {showInput("Product name", p.name)}
-                                        {showInput("Product price", p.price)}
-                                        {showInput("Product total", p.count)}
-                                        {showInput("Product Id", p._id)}
+                                        {showInput("Tên sản phẩm", p.name)}
+                                        {showInput("Giá", p.price)}
+                                        {showInput("Tổng sản phẩm", p.count)}
+                                        {showInput("Mã sản phẩm", p._id)}
                                     </div>
                                 ))}
                             </div>

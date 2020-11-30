@@ -40,7 +40,7 @@ const AddCategory = () => {
     const newCategoryForm = () => (
         <form onSubmit={clickSubmit}>
             <div className='form-group'>
-                <label className='text-muted'>Name</label>
+                <label className='text-muted'>Tên</label>
                 <input 
                     type='text' 
                     className='form-control' 
@@ -52,34 +52,34 @@ const AddCategory = () => {
                 
             </div>
             <button className='btn btn-outline-primary'>
-                Create Category
+                Thêm loại sách mới
             </button>
         </form>
     )
 
     const showSuccess = () => {
         if(success) {
-            return <h3 className='text-success'>{name} is created</h3>
+            return <h3 className='text-success'>{name} đã được thêm</h3>
         }
     }
     const showError = () => {
         if(error) {
-            return <h3 className='text-danger'>Category should be unique</h3>
+            return <h3 className='text-danger'>Tên loại sách là duy nhất</h3>
         }
     }
 
     const goBack = () => (
         <div className="mt-5">
             <Link to="/admin/dashboard" className="text-warning">
-                Back to Dashboard
+                Quay lại tổng quan
             </Link>
         </div>
     );
 
     return (
         <Layout
-            title="Add new category"
-            description={`Welcome ${user.name}!, ready to add a new Category`}
+            title="Thêm loại sách"
+            description={`Xin chào ${user.name}!`}
             className="container-fluid"
         >
             <div className="row">

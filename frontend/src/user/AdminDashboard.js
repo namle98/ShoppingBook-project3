@@ -11,11 +11,11 @@ const AdminDashboard = () => {
     const adminLinks = () => {
         return (
             <div className="card">
-                <h4 className="card-header">Quản lý sản phẩm và mua bán</h4>
+                <h4 className="card-header">Quản lý sản phẩm và đơn hàng</h4>
                 <ul className="list-group">
                     <li className="list-group-item">
                         <Link className="nav-link" to="/create/category">
-                            Thêm loại hàng
+                            Thêm loại sách
                         </Link>
                     </li>
                     <li className="list-group-item">
@@ -43,8 +43,8 @@ const AdminDashboard = () => {
             <div className="card mb-5">
                 <h3 className="card-header">Thông tin người dùng</h3>
                 <ul className="list-group">
-                    <li className="list-group-item">{name}</li>
-                    <li className="list-group-item">{email}</li>
+                    <li className="list-group-item">Tên: {name}</li>
+                    <li className="list-group-item">Email: {email}</li>
                     <li className="list-group-item">
                     Chức vụ: {role === 1 ? "Quản lý" : "Khách hàng"}
                     </li>

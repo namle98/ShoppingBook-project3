@@ -62,6 +62,14 @@ const AddProduct = () => {
         setValues({ ...values, [name]: value });
     };
 
+    const handleNumber = (value) => {
+        let replaceNum = value.replace(/,/, '');
+        let numFormat = parseInt(replaceNum);
+        let number = Intl.NumberFormat('en-US').format(numFormat);
+
+        setValues({...values, price: number});
+    }
+
     const clickSubmit = event => {
         event.preventDefault();
         setValues({ ...values, error: '', loading: true });
@@ -86,7 +94,7 @@ const AddProduct = () => {
 
     const newPostForm = () => (
         <form className="mb-3" onSubmit={clickSubmit}>
-            <h4>Post Photo</h4>
+            <h4>Chọn ảnh</h4>
             <div className="form-group">
                 <label className="btn btn-secondary">
                     <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
@@ -94,24 +102,24 @@ const AddProduct = () => {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Name</label>
+                <label className="text-muted">Tên</label>
                 <input onChange={handleChange('name')} type="text" className="form-control" value={name} />
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Description</label>
+                <label className="text-muted">Miêu tả</label>
                 <textarea onChange={handleChange('description')} className="form-control" value={description} />
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Price</label>
-                <input onChange={handleChange('price')} type="number" className="form-control" value={price} />
+                <label className="text-muted">Giá</label>
+                <input onChange={(e) => handleNumber(e.target.value)} type="text" className="form-control" value={price} />
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Category</label>
+                <label className="text-muted">Loại</label>
                 <select onChange={handleChange('category')} className="form-control">
-                    <option>Please select</option>
+                    <option>Lựa chọn</option>
                     {categories &&
                         categories.map((c, i) => (
                             <option key={i} value={c._id}>
@@ -122,20 +130,20 @@ const AddProduct = () => {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Shipping</label>
+                <label className="text-muted">Giao hàng</label>
                 <select onChange={handleChange('shipping')} className="form-control">
-                    <option>Please select</option>
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
+                    <option>Lựa chọn</option>
+                    <option value="0">Không</option>
+                    <option value="1">Có</option>
                 </select>
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Quantity</label>
+                <label className="text-muted">Số lượng</label>
                 <input onChange={handleChange('quantity')} type="number" className="form-control" value={quantity} />
             </div>
 
-            <button className="btn btn-outline-primary">Create Product</button>
+            <button className="btn btn-outline-primary">Tạo sản phẩm</button>
         </form>
     );
 
@@ -147,7 +155,7 @@ const AddProduct = () => {
 
     const showSuccess = () => (
         <div className="alert alert-info" style={{ display: createdProduct ? '' : 'none' }}>
-            <h2>{`${createdProduct}`} is created!</h2>
+            <h2>{`${createdProduct}`} đã được tạo!</h2>
         </div>
     );
 
@@ -159,7 +167,7 @@ const AddProduct = () => {
         );
 
     return (
-        <Layout title="Add a new product" description={`Welcome ${user.name}!, ready to add a new product?`}>
+        <Layout title="Thêm mới sản phẩm" description={`Xin chào ${user.name}!`}>
             <div className="row">
                 <div className="col-md-8 offset-md-2">
                     {showLoading()}

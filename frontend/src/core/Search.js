@@ -54,10 +54,10 @@ const Search = () => {
 
     const searchMessage = (searched, results) => {
         if(searched && results.length > 0) {
-            return `Found ${results.length} products`
+            return `Tìm kiếm được ${results.length} sản phẩm`
         }
         if(searched && results.length < 1) {
-            return `No products found`
+            return `Không tìm thấy sản phẩm`
         }
         
     }
